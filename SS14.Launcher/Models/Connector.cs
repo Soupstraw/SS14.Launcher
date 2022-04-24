@@ -415,6 +415,10 @@ public class Connector : ReactiveObject
         {
             basePath = Path.Combine(LauncherPaths.DirLauncherInstall, "loader");
         }
+        else if (Environment.GetEnvironmentVariable("SS14_LOADER_PATH") is string loaderPath)
+        {
+            basePath = loaderPath;
+        }
         else
         {
             basePath = Path.GetFullPath(Path.Combine(
